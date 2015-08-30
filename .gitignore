@@ -41,3 +41,19 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+
+# #################### ignored by wukong #####################
+# ignored ide config file
+.classpath
+.project
+.settings
+.idea/
+wukong-util.iml
+
+# ignored project inner folder and file
+log/
+target/
+src/test/java/TestMain.java
+# #################### ignored by wukong #####################
