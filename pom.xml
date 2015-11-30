@@ -4,7 +4,7 @@
 
     <groupId>band.wukong</groupId>
     <artifactId>wukong-util</artifactId>
-    <version>0.1.0.2015.0717</version>
+    <version>0.1.1</version>
     <packaging>jar</packaging>
     <name>wukong-util</name>
     <url>http://www.wukong.band/code/wukong-util</url>

@@ -10,22 +10,27 @@ import java.util.Properties;
  */
 public class PropertiesUtil {
 
-    public static String read(String file, String propName) {
-        Properties p = load(file);
-        return p.getProperty(propName);
-
-    }
-
-    public static Properties load(String file) {
-        Properties p = new Properties();
-        InputStream is = PropertiesUtil.class.getResourceAsStream(file);
+    public static Properties loadByResourceAsStream(String file) {
+        Properties props = new Properties();
         try {
-            p.load(is);
+            props.load(Thread.currentThread().getClass().getResourceAsStream(file));
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException("load properties file failed", e);
         }
-        return p;
+        return props;
+    }
+
+    public static Properties loadByFileInputStream(String file) {
+        Properties props = new Properties();
+        try {
+            FileInputStream fs = new FileInputStream(file);
+            props.load(fs);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("load properties file failed", e);
+        }
+        return props;
     }
 
 }

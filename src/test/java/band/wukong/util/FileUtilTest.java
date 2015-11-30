@@ -44,7 +44,7 @@ public class FileUtilTest {
     public void readLines() {
         List<String> slist = FileUtil.readLines(file);
 //        PrintUtil.println(System.out, slist);
-        Assert.assertTrue(slist.size() == 6);
+        Assert.assertTrue(slist.size() == 1);
 
     }
 }
