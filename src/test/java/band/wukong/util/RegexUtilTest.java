@@ -3,7 +3,6 @@ package band.wukong.util;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.regex.Pattern;
 
 /**
  * As you see...
