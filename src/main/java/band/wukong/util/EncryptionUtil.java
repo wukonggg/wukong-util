@@ -26,13 +26,18 @@ public class EncryptionUtil {
         if (algorithm == Algorithm.MD5) {
             try {
                 return md5(source);
-            } catch (UnsupportedEncodingException | NoSuchAlgorithmException e) {
+            } catch (UnsupportedEncodingException e) {
+                throw new RuntimeException(e);
+            } catch (NoSuchAlgorithmException e) {
                 throw new RuntimeException(e);
             }
+
         } else if (algorithm == Algorithm.SHA1) {
             try {
                 return sha1(source);
-            } catch (UnsupportedEncodingException | NoSuchAlgorithmException e) {
+            } catch (UnsupportedEncodingException e) {
+                throw new RuntimeException(e);
+            } catch (NoSuchAlgorithmException e) {
                 throw new RuntimeException(e);
             }
         }

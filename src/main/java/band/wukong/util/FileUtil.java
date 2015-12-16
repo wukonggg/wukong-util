@@ -45,7 +45,7 @@ public class FileUtil {
     }
 
     public static List<String> readLines(String file) {
-        List<String> slist = new ArrayList<>();
+        List<String> slist = new ArrayList<String>();
 
         BufferedReader in;
         try {
