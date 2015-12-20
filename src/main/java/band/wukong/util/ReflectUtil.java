@@ -10,13 +10,17 @@ import java.lang.reflect.Field;
 public class ReflectUtil {
 
     /**
-     * 获取对象中某个Field的值
+     * 获取对象中某个Field的值。如果object或者field为null，则返回null
      *
      * @param o
      * @param f
      * @return
      */
     public static Object getFieldValue(Object o, Field f) {
+        if (null == o || null == f) {
+            return null;
+        }
+
         Object val = null;
         try {
             if (f.isAccessible()) {
@@ -26,7 +30,7 @@ public class ReflectUtil {
                 val = f.get(o);
                 f.setAccessible(false);
             }
-        } catch (Exception e) {
+        } catch (IllegalAccessException e) {
             throw new RuntimeException("Could not get the value of field.", e);
         }
         return val;
