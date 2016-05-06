@@ -12,23 +12,42 @@ public class PropertiesUtil {
 
     public static Properties loadByResourceAsStream(String file) {
         Properties props = new Properties();
+        InputStream is = null;
         try {
-            props.load(Thread.currentThread().getClass().getResourceAsStream(file));
+            is = Thread.currentThread().getClass().getResourceAsStream(file);
+            props.load(is);
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException("load properties file failed", e);
+        } finally {
+            if (null != is) {
+                try {
+                    is.close();
+                } catch (IOException ignored) {
+                    ignored.printStackTrace();
+                }
+            }
         }
         return props;
     }
 
     public static Properties loadByFileInputStream(String file) {
         Properties props = new Properties();
+        FileInputStream fs = null;
         try {
-            FileInputStream fs = new FileInputStream(file);
+            fs = new FileInputStream(file);
             props.load(fs);
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException("load properties file failed", e);
+        } finally {
+            if (null != fs) {
+                try {
+                    fs.close();
+                } catch (IOException ignored) {
+                    ignored.printStackTrace();
+                }
+            }
         }
         return props;
     }
