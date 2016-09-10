@@ -1,2 +1,2 @@
-mvn install:install-file -Dfile=./target/wukong-util-0.1.1.jar -DgroupId=band.wukong -DartifactId=wukong-util -Dversion=0.1.1 -Dpackaging=jar
-mvn install:install-file -Dfile=./target/wukong-util-0.1.4a-sources.jar -DgroupId=band.wukong -DartifactId=wukong-util -Dversion=0.1.4a -Dpackaging=jar -Dclassifier=sources
+mvn install:install-file -Dfile=./target/wukong-util-0.1.4.jar -DgroupId=band.wukong -DartifactId=wukong-util -Dversion=0.1.4 -Dpackaging=jar
+mvn install:install-file -Dfile=./target/wukong-util-0.1.4-sources.jar -DgroupId=band.wukong -DartifactId=wukong-util -Dversion=0.1.4 -Dpackaging=jar -Dclassifier=sources
