@@ -1,3 +1,12 @@
+
+# wukong-util-0.1.4          [2016.0910]
+- VERSION.TXT换为CHANGE.MD
+- 增加guide目录
+- 调整Calculator.format
+
+
+# version.txt
+
 wukong-util-0.1.4a          [2016.0624]
 1.增加SerializeUtil
 

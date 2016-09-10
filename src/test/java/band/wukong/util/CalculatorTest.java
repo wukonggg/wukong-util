@@ -11,6 +11,16 @@ import org.junit.Test;
 public class CalculatorTest {
 
     @Test
+    public void format() {
+        Assert.assertEquals("0.10", Calculator.format(0.104, 2, "0.00"));
+        Assert.assertEquals("0.11", Calculator.format(0.105, 2, "0.00"));
+
+        Assert.assertEquals("0.110", Calculator.format(0.105, 2, "0.000"));
+        Assert.assertEquals("0.105", Calculator.format(0.105, 3, "0.000"));
+        Assert.assertEquals("0.1050", Calculator.format(0.105, 3, "0.0000"));
+    }
+
+    @Test
     public void add() {
         Assert.assertTrue(Calculator.add(82.89, 0.03) == 82.92);
         Assert.assertTrue(Calculator.add(82.89, 1.03) == 83.92);

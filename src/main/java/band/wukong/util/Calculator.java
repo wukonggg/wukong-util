@@ -14,16 +14,17 @@ public class Calculator {
     public static final String FMT_PATTERN_FD2 = "0.00";
 
     /**
-     * 格式化数字
+     * 格式化数字。先四舍五入，再做格式化
      *
      * @param d 待处理数字
-     * @param i 最大小数位
-     * @param p pattern。如{'固定两位小数', '0.00'}
+     * @param scale 四舍五入位数
+     * @param p 见DecimalFormat的applyPattern方法。如{'固定两位小数', '0.00'}
      * @return
+     * @see java.text.DecimalFormat
      */
-    public static String format(double d, int i, String p) {
+    public static String format(double d, int scale, String p) {
+        d = round(d, scale);
         DecimalFormat df = (DecimalFormat) NumberFormat.getInstance();
-        df.setMaximumFractionDigits(i);
         if (null == p || p.trim().equals("")) {
             p = FMT_PATTERN_FD0;
         }
