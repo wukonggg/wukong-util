@@ -50,31 +50,39 @@ public class DateUtil {
     /**
      * String转化Date。
      *
-     * @param date 支持的格式：yyyy-MM-dd, yyyy-MM-dd HH:mm:ss
+     * @param date 支持的格式包括yyyyMMdd, yyyy-MM-dd, yyyy-MM-dd HH:mm:ss
      *
      * @return java.util.Date
      */
-    public static Date convert2date(String date) {
-        //RegexUtil.P_DATE_YYYYMMDD
+    public static Date parse(String date) {
         String re_yymmdd = "^([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]|[0-9][1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))$";
         if (date.matches(re_yymmdd)) {
             try {
-                return new SimpleDateFormat("yyyy-MM-dd").parse(date);
+                return new SimpleDateFormat(FMT_YYYYMMDD).parse(date);
             } catch (ParseException e) {
                 throw new RuntimeException(e);
             }
         }
 
-        //RegexUtil.P_DATE_YYYYMMDD_HHMMSS
         String re_yymmdd_hhmmss = "^([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]|[0-9][1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))\\p{Space}[0-2][0-9]:[0-5][0-9]:[0-5][0-9]$";
         if (date.matches(re_yymmdd_hhmmss)) {
             try {
-                return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(date);
+                return new SimpleDateFormat(FMT_YYYYMMDDHHMMSS).parse(date);
             } catch (ParseException e) {
                 throw new RuntimeException(e);
             }
         }
-        throw new IllegalArgumentException();
+
+        String re_yymmdd_no_sep = "^([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]|[0-9][1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))$";
+        if (date.matches(re_yymmdd_no_sep)) {
+            try {
+                return new SimpleDateFormat(FMT_YYYYMMDD_NO_SEP).parse(date);
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        throw new IllegalArgumentException("传入参数格式不支持。");
     }
 
     /**

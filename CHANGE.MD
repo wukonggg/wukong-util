@@ -4,7 +4,11 @@
 - upd: 更新RandomUtilTest原有测试用例
 - add: 增加方法RandomUtil.randomNumber()
 - add: 增加测试用例RandomUtilTest.randomNumber()
-- add: DateUtil.random()
+- upd: rename DateUtil.convert2Date() to DateUtil.parse()，并增加对YYYYMMDD的支持。
+- upd: 改造测试用例DateUtilTest
+
+- add: 增加方法RandomUtil.randomDate()
+- add: 增加测试用例RandomUtilTest.randomDate()
 
 
 # wukong-util-0.1.4          [2016.0910]

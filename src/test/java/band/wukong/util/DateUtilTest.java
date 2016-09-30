@@ -21,42 +21,50 @@ public class DateUtilTest {
     }
 
     @Test
-    public void convert2date() {
-        Assert.assertNotNull(DateUtil.convert2date("2015-01-31"));
-        Assert.assertNotNull(DateUtil.convert2date("2015-01-31 00:00:00"));
-        Assert.assertNotNull(DateUtil.convert2date("2015-01-31 23:59:59"));
+    public void parse_success() {
+        Assert.assertNotNull(DateUtil.parse("20150131"));
+        Assert.assertNotNull(DateUtil.parse("2015-01-31"));
+        Assert.assertNotNull(DateUtil.parse("2015-01-31 00:00:00"));
+        Assert.assertNotNull(DateUtil.parse("2015-01-31 23:59:59"));
 
     }
 
     @Test
-    public void convert2date_failed() {
-        boolean catched = false;
+    public void parse_failed() {
+        boolean failed = false;
+
         try {
-            DateUtil.convert2date("2015-01-32");
+            DateUtil.parse("20151301");
         } catch (RuntimeException e) {
-            catched = true;
+            failed = true;
         }
-        if (!catched) {
+
+        try {
+            DateUtil.parse("2015-01-32");
+        } catch (RuntimeException e) {
+            failed = true;
+        }
+        if (!failed) {
             throw new RuntimeException("没有捕捉到异常");
         }
 
         try {
-            catched = false;
-            DateUtil.convert2date("2015-02-30");
+            failed = false;
+            DateUtil.parse("2015-02-30");
         } catch (RuntimeException e) {
-            catched = true;
+            failed = true;
         }
-        if (!catched) {
+        if (!failed) {
             throw new RuntimeException("没有捕捉到异常");
         }
 
         try {
-            catched = false;
-            DateUtil.convert2date("2015-01-31 00:00:60");
+            failed = false;
+            DateUtil.parse("2015-01-31 00:00:60");
         } catch (RuntimeException e) {
-            catched = true;
+            failed = true;
         }
-        if (!catched) {
+        if (!failed) {
             throw new RuntimeException("没有捕捉到异常");
         }
     }
