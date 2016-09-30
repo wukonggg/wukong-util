@@ -1,3 +1,11 @@
+# wukong-util-0.1.5a          [2016.09xx]
+- add: 增加Pattern，RegexUtil.P_CAPITAL
+- upd: 更新RegexUtilTest，增加P_CAPITAL的用例
+- upd: 更新RandomUtilTest原有测试用例
+- add: 增加方法RandomUtil.randomNumber()
+- upd: 增加方法RandomUtil.randomNumber()
+- add: DateUtil.random()
+
 
 # wukong-util-0.1.4          [2016.0910]
 - VERSION.TXT换为CHANGE.MD

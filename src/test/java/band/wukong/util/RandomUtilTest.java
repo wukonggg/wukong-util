@@ -1,6 +1,11 @@
 package band.wukong.util;
 
+import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * As you see...
@@ -11,16 +16,29 @@ public class RandomUtilTest {
 
     @Test
     public void randomCapital() {
-        for (int i = 0; i < 100; i++) {
-            System.out.println(RandomUtil.randomCapital());
+        for (int i = 0; i < 1000; i++) {
+            String s = RandomUtil.randomCapital();
+            boolean isCapital = RegexUtil.P_CAPITAL.matcher(s).matches();
+            Assert.assertTrue(isCapital);
         }
     }
 
     @Test
     public void randomCapital2() {
+        String[] except = new String[] {"X", "J", "P"};
+        List<String> exceptList = Arrays.asList(except);
         for (int i = 0; i < 1000; i++) {
-            System.out.println(RandomUtil.randomCapital(new String[] {"O"}));
+            String s = RandomUtil.randomCapital(except);
+            boolean isCapital = RegexUtil.P_CAPITAL.matcher(s).matches();
+            boolean hasExcepted = !exceptList.contains(s);
+            Assert.assertTrue(isCapital && hasExcepted);
         }
+    }
+
+
+    @Test
+    public void randomNumber() {
+
     }
 
 }
