@@ -3,7 +3,7 @@
 - upd: 更新RegexUtilTest，增加P_CAPITAL的用例
 - upd: 更新RandomUtilTest原有测试用例
 - add: 增加方法RandomUtil.randomNumber()
-- upd: 增加方法RandomUtil.randomNumber()
+- add: 增加测试用例RandomUtilTest.randomNumber()
 - add: DateUtil.random()
 
 

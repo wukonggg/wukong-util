@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -38,7 +37,12 @@ public class RandomUtilTest {
 
     @Test
     public void randomNumber() {
-
+        long start = 1;
+        long end = 100;
+        for (int i = 0; i < 1000; i++) {
+            long num = RandomUtil.randomNumber(start, end);
+            Assert.assertTrue(num > start && num < end);
+        }
     }
 
 }
