@@ -10,6 +10,11 @@ import java.util.regex.Pattern;
 public class RegexUtil {
 
     /**
+     * Pattern: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+     */
+    public static final Pattern P_CAPITAL = Pattern.compile("[A-Z]");
+
+    /**
      * Pattern: date string in format "YYYY-MM-DD"
      */
     public static final Pattern P_DATE_YYYYMMDD = Pattern.compile("^([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]|[0-9][1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))$");

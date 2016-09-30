@@ -13,6 +13,15 @@ public class RegexUtilTest {
 
     @Test
     public void matches() {
+        Assert.assertTrue(RegexUtil.P_CAPITAL.matcher("A").matches());
+        Assert.assertTrue(RegexUtil.P_CAPITAL.matcher("Z").matches());
+        Assert.assertTrue(RegexUtil.P_CAPITAL.matcher("M").matches());
+        Assert.assertTrue(RegexUtil.P_CAPITAL.matcher("O").matches());
+        Assert.assertTrue(!RegexUtil.P_CAPITAL.matcher("~").matches());
+        Assert.assertTrue(!RegexUtil.P_CAPITAL.matcher(".").matches());
+        Assert.assertTrue(!RegexUtil.P_CAPITAL.matcher("=").matches());
+
+
         Assert.assertTrue(RegexUtil.P_DATE_YYYYMMDD.matcher("2015-07-08").matches());       //日期格式正确
         Assert.assertTrue(RegexUtil.P_DATE_YYYYMMDD.matcher("0014-01-03").matches());       //这个测试年份
         Assert.assertFalse(RegexUtil.P_DATE_YYYYMMDD.matcher("2014-02-29").matches());      //日期范围不正确---平年2月没有29号
