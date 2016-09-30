@@ -23,6 +23,7 @@ public class DateUtilTest {
     @Test
     public void parse_success() {
         Assert.assertNotNull(DateUtil.parse("20150131"));
+        Assert.assertNotNull(DateUtil.parse("20160901"));
         Assert.assertNotNull(DateUtil.parse("2015-01-31"));
         Assert.assertNotNull(DateUtil.parse("2015-01-31 00:00:00"));
         Assert.assertNotNull(DateUtil.parse("2015-01-31 23:59:59"));

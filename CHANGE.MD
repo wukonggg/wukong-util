@@ -1,4 +1,4 @@
-# wukong-util-0.1.5a          [2016.09xx]
+# wukong-util-0.1.5a          [2016.0930]
 - add: 增加Pattern，RegexUtil.P_CAPITAL
 - upd: 更新RegexUtilTest，增加P_CAPITAL的用例
 - upd: 更新RandomUtilTest原有测试用例
@@ -6,7 +6,6 @@
 - add: 增加测试用例RandomUtilTest.randomNumber()
 - upd: rename DateUtil.convert2Date() to DateUtil.parse()，并增加对YYYYMMDD的支持。
 - upd: 改造测试用例DateUtilTest
-
 - add: 增加方法RandomUtil.randomDate()
 - add: 增加测试用例RandomUtilTest.randomDate()
 

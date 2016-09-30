@@ -1,5 +1,9 @@
 package band.wukong.util;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * As you see...
  *
@@ -36,8 +40,9 @@ public class RandomUtil {
 
     /**
      * 生成随机数字，不包括上下限。
+     *
      * @param begin 数字下限
-     * @param end 数字上限
+     * @param end   数字上限
      * @return long型
      */
     public static long randomNumber(long begin, long end) {
@@ -47,6 +52,38 @@ public class RandomUtil {
             return randomNumber(begin, end);
         }
         return rtn;
+    }
+
+    /**
+     * 获取随机日期
+     *
+     * @param beginDate "yyyy-MM-dd"
+     * @param endDate   "yyyy-MM-dd"
+     * @return
+     */
+    public static Date randomDate(String beginDate, String endDate) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+        Date start = null;
+        try {
+            start = format.parse(beginDate);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        Date end = null;
+        try {
+            end = format.parse(endDate);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+
+        if (start.getTime() >= end.getTime()) {
+            // getTime()表示返回自 1970 年 1 月 1 日 00:00:00 GMT 以来此 Date 对象表示的毫秒数。
+            throw new IllegalArgumentException("传入参数不正确，beginDate大于endDate。");
+        }
+        long date = randomNumber(start.getTime(), end.getTime());
+
+        return new Date(date);
     }
 
 }
