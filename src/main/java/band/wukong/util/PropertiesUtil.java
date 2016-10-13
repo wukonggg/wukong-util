@@ -1,6 +1,8 @@
 package band.wukong.util;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 /**
@@ -10,6 +12,12 @@ import java.util.Properties;
  */
 public class PropertiesUtil {
 
+    /**
+     * load by resource as stream....
+     *
+     * @param file file
+     * @return properties instance
+     */
     public static Properties loadByResourceAsStream(String file) {
         Properties props = new Properties();
         InputStream is = null;
@@ -31,6 +39,12 @@ public class PropertiesUtil {
         return props;
     }
 
+    /**
+     * load by FileInputStream....
+     *
+     * @param file file
+     * @return properties instance
+     */
     public static Properties loadByFileInputStream(String file) {
         Properties props = new Properties();
         FileInputStream fs = null;

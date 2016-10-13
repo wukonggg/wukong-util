@@ -3,9 +3,9 @@ package band.wukong.util;
 import java.util.regex.Pattern;
 
 /**
- * Description: 正则表达式工具类
- * Author: wukong(wukonggg@139.com)
- * Date: 2009-10-31 8:58:10
+ * As you see...
+ *
+ * @author wukong(wukonggg@139.com)
  */
 public class RegexUtil {
 
@@ -30,7 +30,7 @@ public class RegexUtil {
     public static final Pattern P_EMAIL = Pattern.compile("^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$");
 
     /**
-     * Pattern: 正整数&26个英文字母
+     * Pattern: 正整数、26个英文字母
      */
     public static Pattern P_CHAR26_INT_GT0 = Pattern.compile("^[A-Za-z0-9]+$");
 

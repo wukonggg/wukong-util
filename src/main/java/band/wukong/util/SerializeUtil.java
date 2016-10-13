@@ -9,6 +9,12 @@ import java.io.*;
  */
 public class SerializeUtil {
 
+    /**
+     * serial
+     *
+     * @param object object
+     * @return bytes[]
+     */
     public static byte[] serial(Object object) {
         ByteArrayOutputStream baos = null;
         ObjectOutputStream oos = null;
@@ -40,6 +46,12 @@ public class SerializeUtil {
         }
     }
 
+    /**
+     * deserialize
+     *
+     * @param bytes bytes
+     * @return object
+     */
     public static Object deserial(byte[] bytes) {
         ByteArrayInputStream bais = null;
         ObjectInputStream ois = null;

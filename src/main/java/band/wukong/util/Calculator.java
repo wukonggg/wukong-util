@@ -16,10 +16,10 @@ public class Calculator {
     /**
      * 格式化数字。先四舍五入，再做格式化
      *
-     * @param d 待处理数字
+     * @param d     待处理数字
      * @param scale 四舍五入位数
-     * @param p 见DecimalFormat的applyPattern方法。如{'固定两位小数', '0.00'}
-     * @return
+     * @param p     见DecimalFormat的applyPattern方法。如{'固定两位小数', '0.00'}
+     * @return 格式化后的数字
      * @see java.text.DecimalFormat
      */
     public static String format(double d, int scale, String p) {

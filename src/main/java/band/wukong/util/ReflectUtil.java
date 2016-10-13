@@ -12,9 +12,9 @@ public class ReflectUtil {
     /**
      * 获取对象中某个Field的值。如果object或者field为null，则返回null
      *
-     * @param o
-     * @param f
-     * @return
+     * @param o object
+     * @param f field
+     * @return field value
      */
     public static Object getFieldValue(Object o, Field f) {
         if (null == o || null == f) {

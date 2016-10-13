@@ -27,20 +27,20 @@ public class EncryptionUtilTest {
     @Test
     public void encrypt_md5() {
         Assert.assertTrue(MD5_EMPTY_EN
-                .equals(EncryptionUtil.encrypt(MD5_EMPTY, EncryptionUtil.Algorithm.MD5)));
+            .equals(EncryptionUtil.encrypt(MD5_EMPTY, EncryptionUtil.Algorithm.MD5)));
         Assert.assertTrue(MD5_A_LOWERCASE_EN
-                .equals(EncryptionUtil.encrypt(MD5_A_LOWERCASE, EncryptionUtil.Algorithm.MD5)));
+            .equals(EncryptionUtil.encrypt(MD5_A_LOWERCASE, EncryptionUtil.Algorithm.MD5)));
         Assert.assertTrue(MD5_ABC_LOWERCASE_EN
-                .equals(EncryptionUtil.encrypt(MD5_ABC_LOWERCASE, EncryptionUtil.Algorithm.MD5)));
+            .equals(EncryptionUtil.encrypt(MD5_ABC_LOWERCASE, EncryptionUtil.Algorithm.MD5)));
         Assert.assertTrue(MD5_MESSAGE_DEGEST_LOWERCASE_EN
-                .equals(EncryptionUtil.encrypt(MD5_MESSAGE_DEGEST_LOWERCASE, EncryptionUtil.Algorithm.MD5)));
+            .equals(EncryptionUtil.encrypt(MD5_MESSAGE_DEGEST_LOWERCASE, EncryptionUtil.Algorithm.MD5)));
         Assert.assertTrue(MD5_A2Z_LOWERCASE_EN
-                .equals(EncryptionUtil.encrypt(MD5_A2Z_LOWERCASE, EncryptionUtil.Algorithm.MD5)));
+            .equals(EncryptionUtil.encrypt(MD5_A2Z_LOWERCASE, EncryptionUtil.Algorithm.MD5)));
     }
 
     @Test
     public void encrypt_sha1() {
         Assert.assertTrue("a9993e364706816aba3e25717850c26c9cd0d89d"
-                .equals(EncryptionUtil.encrypt("abc", EncryptionUtil.Algorithm.SHA1)));
+            .equals(EncryptionUtil.encrypt("abc", EncryptionUtil.Algorithm.SHA1)));
     }
 }

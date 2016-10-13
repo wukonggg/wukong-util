@@ -25,7 +25,7 @@ public class RandomUtilTest {
 
     @Test
     public void randomCapital2() {
-        final String[] except = new String[] {"X", "J", "P"};
+        final String[] except = new String[]{"X", "J", "P"};
         final List<String> exceptList = Arrays.asList(except);
         for (int i = 0; i < 1000; i++) {
             String s = RandomUtil.randomCapital(except);

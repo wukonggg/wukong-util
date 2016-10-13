@@ -20,7 +20,7 @@ public class DateUtil {
      *
      * @param date date
      * @param type DateUtils.
-     * @return
+     * @return 字符串格式的日期
      */
     public static String format(Date date, String type) {
         if (null == date) return "";
@@ -40,7 +40,7 @@ public class DateUtil {
      * 生成短格式日期
      *
      * @param date date
-     * @return YYYY-MM-DD
+     * @return 格式为YYYY-MM-DD
      */
     public static String format(Date date) {
         if (null == date) return "";
@@ -51,8 +51,7 @@ public class DateUtil {
      * String转化Date。
      *
      * @param date 支持的格式包括yyyyMMdd, yyyy-MM-dd, yyyy-MM-dd HH:mm:ss
-     *
-     * @return java.util.Date
+     * @return java.util.Date类型的date
      */
     public static Date parse(String date) {
         String re_yymmdd = "^([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]|[0-9][1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))$";

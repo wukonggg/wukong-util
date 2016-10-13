@@ -1,3 +1,6 @@
+# wukong-util-0.1.5          [2016.1013]
+- upd：为了提交maven中央库补充pom，调整注释
+
 # wukong-util-0.1.5a          [2016.0930]
 - add: 增加Pattern，RegexUtil.P_CAPITAL
 - upd: 更新RegexUtilTest，增加P_CAPITAL的用例

@@ -14,7 +14,7 @@ public class RandomUtil {
     /**
      * 生成随机大写字母
      *
-     * @return
+     * @return random
      */
     public static String randomCapital() {
         String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -25,7 +25,7 @@ public class RandomUtil {
      * 生成随机大写字母。范围A-Z。可以指定不包含的字符
      *
      * @param exceptCapitals 不包含的单个字母数组
-     * @return
+     * @return random
      */
     public static String randomCapital(String[] exceptCapitals) {
         if (null == exceptCapitals || exceptCapitals.length <= 0) {
@@ -43,7 +43,7 @@ public class RandomUtil {
      *
      * @param begin 数字下限
      * @param end   数字上限
-     * @return long型
+     * @return random
      */
     public static long randomNumber(long begin, long end) {
         long rtn = begin + (long) (Math.random() * (end - begin));
@@ -59,7 +59,7 @@ public class RandomUtil {
      *
      * @param beginDate "yyyy-MM-dd"
      * @param endDate   "yyyy-MM-dd"
-     * @return
+     * @return random
      */
     public static Date randomDate(String beginDate, String endDate) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");

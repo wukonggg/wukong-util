@@ -2,10 +2,8 @@ package band.wukong.util;
 
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.OutputStream;
 
 /**
  * As you see...
@@ -19,6 +17,6 @@ public class SerializeUtilTest {
         String name = new File("./README.MD").getName();
         System.out.println(name);
         byte[] bytes = SerializeUtil.serial(name);
-        System.out.println((String)SerializeUtil.deserial(bytes));
+        System.out.println((String) SerializeUtil.deserial(bytes));
     }
 }

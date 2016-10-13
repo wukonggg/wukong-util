@@ -27,7 +27,7 @@ public class TestUserBean {
     @Override
     public String toString() {
         return "TestUserBean{" +
-                "name='" + name + '\'' +
-                '}';
+            "name='" + name + '\'' +
+            '}';
     }
 }

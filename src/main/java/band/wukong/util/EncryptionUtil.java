@@ -13,13 +13,15 @@ public class EncryptionUtil {
     /**
      * 算法枚举
      */
-    public static enum Algorithm {MD5, SHA1
+    public static enum Algorithm {
+        MD5, SHA1
     }
 
     /**
      * 加密。支持MD5和SHA
      *
-     * @param source source string
+     * @param source    source string
+     * @param algorithm 算法，见EncryptionUtil.Algorithm
      * @return string encrypted
      */
     public static String encrypt(String source, Algorithm algorithm) {

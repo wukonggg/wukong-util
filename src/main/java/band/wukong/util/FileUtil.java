@@ -12,10 +12,10 @@ import java.util.List;
 public class FileUtil {
 
     /**
-     * 获取文件扩展名
+     * 获取文件扩展名，如果没有找到扩展名就返回空字符串
      *
      * @param file file
-     * @return
+     * @return 扩展名。。。。
      */
     public static String getFileExtension(File file) {
         String fileName = file.getName();
@@ -30,7 +30,7 @@ public class FileUtil {
      * 获取文件名称，不含扩展名
      *
      * @param fileName fileName
-     * @return
+     * @return 文件名。。。。
      */
     public static String getFileNameWithoutExtension(String fileName) {
         if (null == fileName || "".equals(fileName)) {
@@ -44,6 +44,12 @@ public class FileUtil {
         }
     }
 
+    /**
+     * 读取文件所有行
+     *
+     * @param file 文件路径及文件名
+     * @return 所有行组成的List
+     */
     public static List<String> readLines(String file) {
         List<String> slist = new ArrayList<String>();
 
