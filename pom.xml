@@ -6,7 +6,7 @@
 
     <groupId>band.wukong</groupId>
     <artifactId>wukong-util</artifactId>
-    <version>0.1.5a</version>
+    <version>0.1.5</version>
     <name>wukong-util</name>
     <description>An utility collection</description>
     <url>http://www.wukong.band/code/wukong-util</url>
